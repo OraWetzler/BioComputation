@@ -47,8 +47,8 @@ def print_output_table(monotonic_functions):
 
 # Check if received function is monotonic
 def is_monotonic(function):
-    # Special case of non-monotonic
-    if function == (0, 0, 0, 0, 0, 0, 0, 0, 0) or function == (1, 1, 1, 1, 1, 1, 1, 1, 1):
+    _,_,all_activators,_,_,_,all_depressors,_,_ = function
+    if not all_activators or all_depressors:
         return False
 
     # Go over function activity
